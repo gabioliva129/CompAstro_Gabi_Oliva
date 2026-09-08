@@ -1,0 +1,13 @@
+#  Tuesday 9/8/26
+
+# python is a scripting and coding language
+    # scripting (run commands, shell, do this etc.)
+    # coding creates variables and environemnts etc.
+
+
+# to make a file executable, do:
+#    chmod +x myfile
+# adds a .py to the end of it and makes it executable with python
+
+
+
