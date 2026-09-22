@@ -94,6 +94,7 @@ if __name__ == "__main__":
 
     #################   PART B   #################
 
+    # plotting the graph
     if args.display_plot == True:
         plt.figure(figsize=(10, 7))
         plt.plot(intervals(args.start, args.stop, args.step_size), E_of_x, color="hotpink")
