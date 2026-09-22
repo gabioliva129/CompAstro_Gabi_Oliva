@@ -75,9 +75,8 @@ if __name__ == "__main__":
 
     for x in intervals(args.start, args.stop, args.step_size):
         value, error = quad(func_in_integral, 0, x)
-            # scipy.integrate, specifically the quad function, automatically calculates the error in each integration evaluation.
+            # scipy.integrate.quad automatically calculates the error in each integration evaluation.
             # Using the Quadrature method of integration. Though it is a tad involved/complex for the shape of the resulting graph and the areas it is finding.
-            # Additionally, scipy.integrate.quad allows users to calculate error.
         E_of_x.append(value)
         E_error.append(error)
 
