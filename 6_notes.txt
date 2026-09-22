@@ -1,0 +1,27 @@
+Lecture 6 -- Interpolation
+9/17/26
+
+
+SPLINES: fit a different equation between each point, but also require the 2nd
+derivatives to match when meeting from either side of the points.
+--> They for the 2nd derivative of the endpoints to be 0.
+--> On pen and paper, splines would be very hard to compute by hand. On a computer, it's very
+     repetitive and easy to code up simply.
+
+Well-sampled data is good to use linear interpolation, medium-filled data is good for quadratic or cubic
+
+Making pretty pictures is best from cubic
+
+
+
+One can perform linear interpolation using
+    numpy.interp(x,xp, yp),
+       where x are the points you want to interpolate at and
+       xp, yp are the x and y values that you know.
+
+
+Alternatively the scipy interpolate sub-package has many functions to call for
+interpolation. The function interpld() can create an instance of your interpolator
+and then be used on a point. There are many choices of how to interpolate.
+        f = interpld(x, y, kind=‘cubic’)
+          and then f(xnew) returns your ynew values using cubic interpolation.

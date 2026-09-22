@@ -45,7 +45,7 @@ if __name__ == "__main__":  # only uses argparse if this file is being directly 
     parser.add_argument("--g",   # allows user to add a different gravitational constant to the environment if they want to solve for time in the case that the ball is on a different planet than Earth
                         type=float,
                         default=9.8,  # m/s^2
-                        help="The gravitational constant. Default value is 9.8 m/s^2.")
+                        help="The gravitational constant. Default is 9.8 m/s^2.")
 
     args = parser.parse_args()
 

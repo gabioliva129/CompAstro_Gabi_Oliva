@@ -1,24 +1,29 @@
-# 9/15/26
-# Day 5 Lecture
+# Lecture 5 Notes -- Differentiation (Derivatives)
+# 9/17/26
 
-# Lecture Notes 4 from Website CONTINUED
-# NUMERICAL INTEGRATION
+# Exercise 5.15
 
-
-# Exercise 5.2
-
-import gaussxw as g  # file from course notes, see file in current directory for explanation of functions
 import numpy as np
+import matplotlib.pyplot as plt
 
-def func(x):   # like function from 4_exercises.py
-    y = x**4 -2*x +1
-    return y
 
-N = 100
-a = 0
-b = 2
+def tanh_func(x):
+        result = 1/2 * np.tanh(2*x)
+        return result
 
-x,w = g.gaussxw(N,a,b)
-answer =  np.sum(func(x) * w)
+def deriv_func(func, x, h=1e-5):
+    df_dx = (func(x + h/2) - func(x - h/2)) / h
+    return df_dx
 
-print(answer)
+def sec2(x):
+    answer = 1 / (np.cosh(2 * x))** 2
+    return answer
+
+
+
+if __name__ == "__main__":
+    interval = np.linspace(-2, 2, 500)
+    plt.plot(interval, deriv_func(tanh_func, interval), label="manual", color="blue")
+    plt.plot(interval, sec2(interval), label="solved", color="red")
+    plt.legend()
+    plt.show()
