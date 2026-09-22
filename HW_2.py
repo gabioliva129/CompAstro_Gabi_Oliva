@@ -74,7 +74,10 @@ if __name__ == "__main__":
     E_error = []
 
     for x in intervals(args.start, args.stop, args.step_size):
-        value, error = quad(func_in_integral, 0, x)   # scipy.integrate, specifically the quad function, automatically calculates the error in each integration evaluation
+        value, error = quad(func_in_integral, 0, x)
+            # scipy.integrate, specifically the quad function, automatically calculates the error in each integration evaluation.
+            # Using the Quadrature method of integration. Though it is a tad involved/complex for the shape of the resulting graph and the areas it is finding.
+            # Additionally, scipy.integrate.quad allows users to calculate error.
         E_of_x.append(value)
         E_error.append(error)
 
@@ -95,7 +98,7 @@ if __name__ == "__main__":
     if args.display_plot == True:
         plt.figure(figsize=(10, 7))
         plt.plot(intervals(args.start, args.stop, args.step_size), E_of_x, color="hotpink")
-        plt.errorbar(intervals(args.start, args.stop, args.step_size), E_of_x, yerr=E_error, fmt='o', ecolor='navy', elinewidth=2, capsize=10, capthick=1.5, color='mediumvioletred')
+        plt.errorbar(intervals(args.start, args.stop, args.step_size), E_of_x, yerr=E_error, fmt='o', ecolor='navy', elinewidth=1, capsize=12, capthick=1.5, color='mediumvioletred')
 
         plt.title("Value of E(x)", fontsize=18)
         plt.xlabel("x", fontsize=14)
