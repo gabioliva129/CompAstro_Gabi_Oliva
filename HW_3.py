@@ -152,10 +152,10 @@ if __name__ == "__main__":
         # plt.axvline(x=r_answer*1e8, color="hotpink", linestyle="--")
         plt.ylabel(r"$f (r)$")
         plt.xlabel("Distance of Satellite from the Earth (m)")
+        plt.title(r"Minimizing Equations of Motion (Finding r where $f(r)=0$)")
 
         box_style = dict(boxstyle='round', facecolor='hotpink', alpha=0.35, edgecolor='black')
         text_string = (r'$f(r) = \frac{GM}{r^2} - \frac{Gm}{(R-r)^2} -\omega^2r$')
-        plt.title(r"Minimizing Equations of Motion (Finding r where $f(r)=0$)")
         plt.text(2e8, -5e31, text_string, fontsize=16, bbox=box_style)
 
         plt.show()
